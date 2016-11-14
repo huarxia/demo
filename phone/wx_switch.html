@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>微信模拟功能utils</title>
+		<meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1">
+		
+		<style type="text/css">
+			*{ margin: 0; padding: 0;}
+			html,body{ width: 100%; height: 100%; background: #f0f0f0;}
+			li{ list-style: none;}
+			a{ text-decoration: none; color: #CCCCCC;}
+			.warp{ background: #fffff; height: 100%; margin: 0 auto; max-width: 720px; font-size: 0.8rem;  }
+			.line{width: 90%; padding: 0 5%;   }
+			.switch{ border-top: 1px solid #CCCCCC; height: 1.6rem; line-height: 1.6rem;}
+			.fl{ float: left;}
+			.fr{ float: right;}
+			.on-off{ width: 1.4rem; position: relative; border-radius:0.5rem ; border: 1px solid #ccc; margin: 0.4rem 0;   height: 0.8rem; display: inline-block;}
+			.on-off i{ width: 0.8rem; position: absolute; left: 0; top: 0;  height: 0.8rem; display: block; background: #ccc; border-radius: 50%;}
+			.swiper li{ height:2.0rem ; transition: 100ms all ease; box-sizing: border-box; width: 100%;   border-top: 1px solid #CCCCCC;  position: relative;overflow: hidden;}
+			.swiper li:last-child{ border-bottom: 1PX solid #CCCCCC;}
+			.swiper li .set{  overflow: hidden; position: absolute; right: 0; top: 0; text-align: center; color: #F0F0F0;   z-index: 1; width: 4rem; line-height: 2.0rem; font-size: 0.55rem}
+			.swiper li .set div{ display: inline-block;}
+			.swiper li .set .wd{ width: 2.5rem; float: left; background: #C7C7CC;}
+			.swiper li .set .sc{ width: 1.5rem;   float: left; background: #FF3B30;}
+			.swiper li a{ width: 100%;  box-sizing: border-box;   display: block; position: absolute; left: 0; top: 0; z-index: 999; background: #F0F0F0;  padding: 0.4rem 5%; height: 2rem;    }
+			.swiper li .titImg{ width: 1.2rem; float: left; display: inline-block;}
+			.swiper li p{ width: 7.5rem; float: right; font-size: 0.5rem; color: #9B9B9B;  }
+			.swiper li p b{ display: inline-block; color: #010101;}	
+			.swiper li p b:nth-child(2){ color: #9B9B9B;}
+			.swiper li p span{ display: block;  line-height: 0.65rem; height: 0.65rem;  overflow:hidden; white-space:nowrap; text-overflow:ellipsis; font-size: 0.45rem;}	
+			.swiper li i.ico{  width: 0.5rem; height: 0.5rem; line-height: 0.5rem; font-size: 0.35rem; font-style: normal; position: absolute; left: 1.5rem; top: 0.2rem; background: #FF3B30; display: block; border-radius: 50%; color: #F0F0F0; text-align: center; }
+		</style>
+		<script type="text/javascript">
+		var sW = document.documentElement.clientWidth; 
+		if(sW>720)sW=720;
+		document.getElementsByTagName("html")[0].style.fontSize = sW/10+"px";
+		var iRem = sW/10;
+		</script>
+	</head>
+	<body>
+	<div class="warp">
+			<div class="switch line">
+				<span class="fl">声音</span>
+				<span class="on-off fr">
+					<i></i>
+				</span>
+			</div>
+			<div class="swiper">
+				<ul>
+					<li class="clearfix">
+						<a href="javascript:;">
+							<img class="titImg"  src="images/1.png"/>
+							<i class="ico">1</i>
+							<p>
+								<span class="clearfix">
+									<b class="fl">OPPO1</b>
+									<b class="fr">昨天</b>
+								</span>
+								<span class="con">
+									充电五分钟，通话两小时充电五分钟，通话两小时充电五分钟，通话两小时充电五分钟，通话两小时
+								</span>
+							</p>
+						</a>
+						<div class="set">
+							<div class="wd"></div>
+							<div class="sc">删除</div>
+						</div>
+					</li>
+					<li class="clearfix">
+						<a href="javascript:;">
+							<img class="titImg"  src="images/1.png"/>
+							<i class="ico">1</i>
+							<p>
+								<span class="clearfix">
+									<b class="fl">OPPO2</b>
+									<b class="fr">昨天</b>
+								</span>
+								<span class="con">
+									充电五分钟，通话两小时充电五分钟，通话两小时充电五分钟，通话两小时充电五分钟，通话两小时
+								</span>
+							</p>
+						</a>
+						<div class="set">
+							<div class="wd"></div>
+							<div class="sc">删除</div>
+						</div>
+					</li>
+					<li class="clearfix">
+						<a href="javascript:;">
+							<img class="titImg"  src="images/1.png"/>
+							<i class="ico">4</i>
+							<p>
+								<span class="clearfix">
+									<b class="fl">OPPO3</b>
+									<b class="fr">昨天</b>
+								</span>
+								<span class="con">
+									充电五分钟，通话两小时充电五分钟，通话两小时充电五分钟，通话两小时充电五分钟，通话两小时
+								</span>
+							</p>
+						</a>
+						<div class="set">
+							<div class="wd"></div>
+							<div class="sc">删除</div>
+						</div>
+					</li>
+					<li class="clearfix">
+						<a href="javascript:;">
+							<img class="titImg"  src="images/1.png"/>
+							<i class="ico">0</i>
+							<p>
+								<span class="clearfix">
+									<b class="fl">OPPO4</b>
+									<b class="fr">昨天</b>
+								</span>
+								<span class="con">
+									充电五分钟，通话两小时充电五分钟，通话两小时充电五分钟，通话两小时充电五分钟，通话两小时
+								</span>
+							</p>
+						</a>
+						<div class="set">
+							<div class="wd"></div>
+							<div class="sc">删除</div>
+						</div>
+					</li>
+					<li class="clearfix">
+						<a href="javascript:;">
+							<img class="titImg"  src="images/1.png"/>
+							<i class="ico">1</i>
+							<p>
+								<span class="clearfix">
+									<b class="fl">OPPO</b>
+									<b class="fr">昨天</b>
+								</span>
+								<span class="con">
+									充电五分钟，通话两小时充电五分钟，通话两小时充电五分钟，通话两小时充电五分钟，通话两小时
+								</span>
+							</p>
+						</a>
+						<div class="set">
+							<div class="wd"></div>
+							<div class="sc">删除</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+	</div>
+		<script src="js/zepto.min.js"></script>
+		<script src="js/toucher.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				var bDown = true;
+				$(".on-off").on("touchend",function(event){
+					downSwitch(
+						{
+							Tfn:function(){console.log("开关已激活")},
+							Ffn:function(){console.log("开关已关闭")}
+						}
+					);
+					event.preventDefault();
+				});
+				function downSwitch(json){
+					json=json||{};
+					json.bDown = json.bDown || bDown;
+					json.bFs = json.bFs || "0.6rem";
+					json.bFc = json.bFc || "#66cc66";
+					json.bTc = json.bTc || "#ccc";
+					if(bDown){
+						$(".on-off i").animate({"left":json.bFs,"backgroundColor":json.bFc},50); 
+						$(".on-off").animate({"borderColor":json.bFc},50);
+						json.Tfn&&json.Tfn();
+						bDown = false;
+					}else{
+						$(".on-off i").animate({"left":"0","backgroundColor":json.bTc},50); 
+						$(".on-off").animate({"borderColor":json.bTc},50); 
+						json.Ffn&&json.Ffn();
+						bDown = true;
+					}
+				}
+ 				//li拖拽
+ 				
+ 				
+				(function(){
+					var iNow =- 4 * iRem;
+					var tX = 0;
+					var iReady = 0;
+					var aLi = document.querySelectorAll('.swiper li a')[0];
+					aLi.addEventListener("touchstart",function(ev){
+						if(iReady == iNow){
+							aLi.addEventListener('touchend',function(ev){
+								this.style.webkitTransition = "0.1s all ease";
+							 	this.style.webkitTransform = "translateX("+0+"px)";
+								var _this = this;
+								setTimeout(function(){
+									_this.style.webkitTransition = "none";
+									tX = 0;
+								},100);
+								ev.preventDefault();
+							},false);
+							iReady = 0;
+							console.log("已最大，+"+iReady);
+							return false;
+						}
+						var _this = this;
+						this.style.webkitTransition = "none";
+						var disX =ev.targetTouches[0].pageX-tX;
+						function fnMove(ev){
+							tX = ev.targetTouches[0].pageX-disX;
+							if(tX>0){
+								tX = 0;
+							}
+							if(tX<iNow){
+								tX = iNow;
+							}
+							aLi.style.webkitTransform = "translateX("+tX+"px)";
+						}
+						document.addEventListener("touchmove",fnMove,false);
+						function fnEnd(ev){
+							if(tX>iNow/3){
+								tX=0;
+							}else{
+								tX = iReady = iNow;
+							}
+							_this.style.webkitTransition = "0.1s all ease";
+						 	_this.style.webkitTransform = "translateX("+tX+"px)";
+							setTimeout(function(){
+								_this.style.webkitTransition = "none";
+							},100);
+							document.removeEventListener("touchmove",fnMove,false);
+			 	   			document.removeEventListener("touchend",fnEnd,false);
+			 	   			console.log(iReady);
+						}
+						document.addEventListener("touchend",fnEnd,false);
+						ev.preventDefault();
+						return false;
+					},false);
+					$(".swiper li .set .wd").on("touchend",function(event){
+						var icon = $(this).parents("li").find(".ico").html();
+						if(icon<1){
+							$(this).parents("li").find(".ico").show().html(1);
+							$(this).html("标记已读");
+							tX =0;
+							$(this).parents("li").find("a").css("-webkit-transition","0.1s all ease");
+							$(this).parents("li").find("a").css("-webkit-transform","translateX("+tX+"px)");
+							setTimeout(function(){
+								$(this).parents("li").find("a").css("-webkit-transition","none");
+							},100);
+						}else{
+							$(this).parents("li").find(".ico").hide().html(0);
+							$(this).html("标记未读");
+							tX =0;
+							$(this).parents("li").find("a").css("-webkit-transition","0.1s all ease");
+							$(this).parents("li").find("a").css("-webkit-transform","translateX("+tX+"px)");
+							setTimeout(function(){
+								$(this).parents("li").find("a").css("-webkit-transition","none");
+							},100);
+						}
+					})
+				})()
+				//删除当前
+				$(".swiper li .set .sc").on("touchend",function(event){
+					$(this).parents("li").animate({"background":"#010101","height":0},100,'ease',function(){
+						$(this).remove();
+					});
+					event.preventDefault();
+				});
+				//角标
+				$(".swiper li").each(function(){
+					if($(this).find("i").html() == 0){
+						$(this).find("i").hide();
+						$(this).find(".wd").html("标记未读");
+					}else{
+						$(this).find(".wd").html("标记已读");
+					}
+				});
+			})
+		</script>
+	 </body>
+</html>

@@ -1,0 +1,38 @@
+a.headerlink { visibility: hidden; }
+h1:hover > a.headerlink, h2:hover > a.headerlink, h3:hover > a.headerlink, h4:hover > a.headerlink, h5:hover > a.headerlink, h6:hover > a.headerlink, dt:hover > a.headerlink { visibility: visible; }
+blockquote{margin: 0;}
+div.body td { text-align: left;}
+.compound td{float:left;padding-left: 18%;}
+table.docutils thead { background-color: rgb(238, 238, 238); }
+table.docutils { border: 1px solid rgb(221, 221, 221); border-collapse: collapse; }
+table.docutils td, table.docutils th { padding: 1px 8px 1px 5px; border-bottom: 1px solid rgb(170, 170, 170); }
+th { text-align: left; padding-right: 5px; }
+ol.arabic { list-style: outside none decimal; }
+pre { overflow-x: auto; overflow-y: hidden; }
+body { font-family: "Lucida Grande","Lucida Sans Unicode","Geneva","Verdana",sans-serif; font-size: 13px; letter-spacing: -0.01em; line-height: 150%; text-align: center; color: black; padding: 0px; border: 0px solid rgb(170, 170, 170);}
+div.document { background-color: white; text-align: left; background-repeat: repeat-x; }
+div.bodywrapper {  }
+div.body { margin: 0px;}
+table ul { margin-left: -20px; }
+table ul, table li { list-style-type: none; }
+p { margin: 0.8em 0px 0.5em; }
+a { text-decoration: none; }
+a:hover { color: rgb(36, 145, 207); }
+div.body a {  }
+h1 { margin: 0px; padding: 0.7em 0px 0.3em; font-size: 1.5em; color: rgb(17, 85, 124); }
+h2 { margin: 1.3em 0px 0.2em; font-size: 1.35em; padding: 0px; }
+h3 { margin: 1em 0px -0.3em; font-size: 1.2em; }
+div.body h1 a, div.body h2 a, div.body h3 a, div.body h4 a, div.body h5 a, div.body h6 a { color: black ! important; }
+a.headerlink { color: rgb(198, 15, 15) ! important; font-size: 1em; margin-left: 6px; padding: 0px 4px; text-decoration: none ! important; }
+a.headerlink:hover { background-color: rgb(204, 204, 204); color: white ! important; }
+cite, code, tt { font-family: "Consolas","Deja Vu Sans Mono","Bitstream Vera Sans Mono",monospace; font-size: 0.95em; letter-spacing: 0.01em; }
+tt { background-color: rgb(242, 242, 242); border-bottom: 1px solid rgb(221, 221, 221); color: rgb(51, 51, 51); }
+pre { letter-spacing: 0.015em; line-height: 120%; padding: 0.5em; border: 1px solid rgb(204, 204, 204); font-family: "Consolas","Deja Vu Sans Mono","Bitstream Vera Sans Mono",monospace; font-size: 0.95em; background-color: rgb(248, 248, 248); }
+table { border-collapse: collapse; margin: 0px -0.5em; }
+.highlight { background: rgb(255, 255, 255) none repeat scroll 0% 0%; }
+.highlight .k { color: rgb(0, 0, 255); }
+.highlight .cm { color: rgb(0, 128, 0); }
+.highlight .c1 { color: rgb(0, 128, 0); }
+.highlight .kc { color: rgb(0, 0, 255); }
+.highlight .kd { color: rgb(0, 0, 255); }
+.highlight .s1 { color: rgb(163, 21, 21); }

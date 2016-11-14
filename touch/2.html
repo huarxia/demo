@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width user-scalable=no" />
+<title>无标题文档</title>
+<style type="text/css">
+*{ margin: 0;padding: 0;list-style: none}
+#div1{ width: 320px;height: 400px;position: relative;overflow: hidden;margin: 0px auto;border:1px solid #000}
+#div1 ul{ position: absolute;top: 0;text-align: center;width: 100%}
+</style>
+<script type="text/javascript" src="move.js"></script>
+<script type="text/javascript">
+window.onload=function(){
+	var oDiv = document.getElementById("div1");
+	var oUl = oDiv.getElementsByTagName("ul")[0];
+	for(var i=0;i<1000;i++){
+		var aLi = document.createElement("li");
+		aLi.innerHTML = i;
+		oUl.appendChild(aLi);
+	}
+	//阻止默认的行为
+	document.ontouchmove=function(ev){
+		ev.preventDefault();
+	}
+	oUl.ontouchstart=function(ev){
+		var touchs = ev.changedTouches[0];
+		var downTop = this.offsetTop;
+		var downY = touchs.pageY;
+		var prevY = touchs.pageY;
+		var iSpeed = 0;
+		var bBtn =true;
+		var timer = null;
+		clearInterval(timer);
+		oUl.ontouchmove=function(ev){
+			var touchs = ev.changedTouches[0];
+			iSpeed = (touchs.pageY - prevY)*1.2;
+			prevY = touchs.pageY;
+			if(this.offsetTop>=0){
+				if(bBtn){
+					downY = touchs.pageY;
+					bBtn =false;
+				}
+				this.style.top = (touchs.pageY - downY)/3 +"px";
+			}else if(this.offsetTop<oDiv.offsetHeight-this.offsetHeight){
+				if(bBtn){
+					downY = touchs.pageY;
+					bBtn =false;
+				}
+				this.style.top = (touchs.pageY - downY)/3 + (oDiv.offsetHeight-this.offsetHeight) +"px";
+			}else{
+				this.style.top = touchs.pageY - downY + downTop +"px";
+			}
+		}
+		oUl.ontouchend=function(){
+			oUl.ontouchmove=null;
+			oUl.ontouchend=null;
+			var _this = this;
+			clearInterval(timer);
+			timer = setInterval(function(){
+				if(Math.abs(iSpeed)<1 || _this.offsetTop>50 || _this.offsetTop<oDiv.offsetHeight - _this.offsetHeight -50){
+					clearInterval(timer);
+					if(_this.offsetTop>=0){
+						startMove(_this,{"top":0});
+					}else if(_this.offsetTop<=oDiv.offsetHeight - _this.offsetHeight){
+						startMove(_this,{"top":oDiv.offsetHeight - _this.offsetHeight});
+					}
+				}else{
+					iSpeed*=0.95;
+					_this.style.top = iSpeed + _this.offsetTop +"px";
+				}
+			},13);
+		}
+	}
+}
+</script>
+<body>
+	<div id="div1">
+		<ul></ul>
+	</div>
+</body>
+</html>

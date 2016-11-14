@@ -1,0 +1,55 @@
+@charset "utf-8";
+blockquote, q {quotes: none;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,label,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img,button{border:0;}
+a:link,a:active{ text-decoration: none}
+.clear{ clear:both;font-size:0; height:0; overflow:hidden;}
+.clearfix{zoom:1;}
+.clearfix:after{ content:'.'; height:0px; display:block; visibility:hidden; clear:both;}
+.fl{ float: left;}
+.fr{ float: right}
+.hide{ display: none}
+.autor_msg{ position: relative;}
+.message {  color: red; left: 0px; position: absolute; top: 72px; font-size: 12px}
+.form_tb{ color: #099bff; font-size: 18px; margin-bottom: 28px; padding-left: 11px;}
+.autor_no{ background: #1ba2eb; border-radius: 50%; color: white; width: 19px; height: 19px; line-height: 19px; margin-top: 40px; text-align: center; }
+.autor_msg_box{ border-bottom: 1px solid #f1f1f1; padding-bottom: 46px;}
+.autor_msg_con{ margin-left: 8px; width: 694px;}
+.authorname{ position: relative;}
+.autor_ip_txt{ color: #303030; font-size: 14px;}
+.autor_ip1{ width: 111px;}
+.autor_msg_con input{ background: white; border: 1px solid #d2d1d1; height: 32px; margin-top: 15px; padding-left: 5px;}
+.authorname .message{ color: red; left: 0; position: absolute; top: 72px;font-size: 12px}
+.autor_msg2, .autor_msg3, .autor_msg4{ margin-left: 20px;}
+.autor_msg_con input.autor_ip3{ width: 210px;}
+.autor_msg_con input.autor_ip4{ width: 222px;}
+.autor_bottom{ margin-top: 43px;}
+.auto_code{ margin-right: 9px;}
+.autor_ip2{  width: 54px;}
+.sex select { margin-top: 20px;}
+.upload_img{ margin-left: 43px; margin-top: 28px;}
+.autor_img{ background: url("../images/lw/autor_img.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0); border: 1px solid #d2d0d0; height: 119px; overflow: hidden;  width: 98px;}
+.uploadfile{ position: relative;}
+.img_upload { background: #86c2ff; color: white; cursor: pointer; display: block; font-size: 12px; height: 21px; line-height: 21px; margin: 9px auto 0; text-align: center; width: 60px;}
+.uploadfile_ip { cursor: pointer; height: 26px; left: 20px; opacity: 0; position: absolute; top: -3px; width: 62px;}
+.uploadfile .message { color: red; left: 0; position: absolute; top: 29px;font-size: 12px}
+.msg_box{ margin-top: 32px;}
+.msg_txt{ color: #090909; display: inline-block; font-size: 14px; text-align: right; width: 60px;}
+.summary{ margin-top: 30px; position: relative;   margin-top: 48px; padding-left: 26px;padding-bottom: 25px;}
+.lw_suminn_txt{color: #090909; display: block; font-size: 14px;}
+.lw_suminn_txt{ color: #090909; display: block; font-size: 14px;}
+.textarea{ border: 1px solid #d1d0d0; height: 114px; margin-top: 15px; padding: 6px; resize: none; width: 723px;}
+.summary .message{ color: red; left: 28px; position: absolute; top: 167px;}
+.submit{ width: 190px;height: 58px;background: #1ba2eb;display: block;color:white;text-align: center;line-height: 58px;font-size: 28px;margin: 10px 0px 0px 100px}
+.checkbox_label{ display: block; height: 36px; margin-left: 26px; margin-top: 30px; width: 721px;}
+.label_txt{ color: #ff6600; margin-left: 12px; width: 670px;font-size: 12px}
+
+
+
+
+
+
+
+
+

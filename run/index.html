@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>轮播图应用move.js库</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="move.js"></script>
+<script>
+	window.onload = function(){
+		var oPrev = getClass("mark_left")[0];
+		var oNext = getClass("mark_right")[0];
+		var oBtnPrev = getClass("prev")[0];
+		var oBtnNext = getClass("next")[0];
+		var oBigUl = getClass("big_pic")[0];
+		var oBigLi = oBigUl.getElementsByTagName("li");
+		var oSmallUl = getClass("small_pic")[0].getElementsByTagName("ul")[0];
+		var oSmallLi = oSmallUl.getElementsByTagName("li");
+		var isNowShow = 0;
+		var iMinZindex = 2;
+		var timer = null;
+		oSmallUl.style.width = oSmallLi.length*oSmallLi[0].offsetWidth + "px";
+		//对上部分左右按钮添加移入移除监听
+		oBtnNext.onmouseover = oNext.onmouseover = function(){
+			startMove(oBtnNext,"opacity",100);
+			clearInterval(timer);
+		}
+		oBtnNext.onmouseout = oNext.onmouseout = function(){
+			startMove(oBtnNext,"opacity",0);
+			zidong();
+		}
+		oBtnPrev.onmouseover = oPrev.onmouseover = function(){
+			startMove(oBtnPrev,"opacity",100);
+			clearInterval(timer);
+		}
+		oBtnPrev.onmouseout = oPrev.onmouseout = function(){
+			startMove(oBtnPrev,"opacity",0);
+			zidong();
+		}
+		//下面小图移入事件
+		for(var i=0;i<oSmallLi.length;i++){
+			oSmallLi[i].index = i;
+			oSmallLi[i].onmouseover=function(){
+				startMove(this,"opacity",100);
+				clearInterval(timer);
+			}
+			oSmallLi[i].onmouseout=function(){
+				if(this.index!=isNowShow){
+					startMove(this,"opacity",60);
+				}
+				zidong();
+			}
+			oSmallLi[i].onclick = function(){
+				if(isNowShow == this.index)return;
+				isNowShow = this.index;
+				tab();
+			}	
+		}
+		//oBtnPrev
+		oBtnPrev.onclick = function(){
+			isNowShow--;
+			if(isNowShow==-1){
+				isNowShow=oSmallLi.length-1;
+			}
+			tab();
+		}
+		//oBtnNext
+		oBtnNext.onclick = function(){
+			isNowShow++;
+			if(isNowShow==oSmallLi.length){
+				isNowShow=0;
+			}
+			tab();
+		}
+		function tab(){
+			for(var j=0;j<oSmallLi.length;j++){
+				startMove(oSmallLi[j],"opacity",60);
+			}
+			startMove(oSmallLi[isNowShow],"opacity",100);
+			oBigLi[isNowShow].style.zIndex =iMinZindex++;
+			oBigLi[isNowShow].style.height = 0;
+			startMove(oBigLi[isNowShow],"height",parseInt(getStyle(oBigUl,"height")));
+			if(isNowShow == 0){
+				startMove(oSmallUl,"left",0);
+			}else if(isNowShow == oSmallLi.length-1){
+				startMove(oSmallUl,"left",-(isNowShow-2)*oSmallLi[0].offsetWidth);
+			}else{
+				startMove(oSmallUl,"left",-(isNowShow-1)*oSmallLi[0].offsetWidth);
+			}
+		}
+		//添加自动播放
+		zidong();
+		function zidong(){
+			timer = setInterval(function(){
+				oBtnNext.onclick();
+			},3000);
+		}
+	}
+</script>
+</head>
+<body>
+<div id="playimages" class="play">
+    <ul class="big_pic">
+		<div class="prev"></div>
+		<div class="next"></div>
+
+		<div class="text">加载图片说明……</div>
+		<div class="length">计算图片数量……</div>
+		
+		<a class="mark_left" href="javascript:;"></a>
+		<a class="mark_right" href="javascript:;"></a>
+		<div class="bg"></div>
+		
+        <li style="z-index:1;"><img src="images/1.jpg" /></li>
+        <li><img src="images/2.jpg" /></li>
+        <li><img src="images/3.jpg" /></li>
+        <li><img src="images/4.jpg" /></li>
+        <li><img src="images/5.jpg" /></li>
+        <li><img src="images/6.jpg" /></li>
+    </ul>
+    <div class="small_pic">
+        <ul style="width:390px;">
+            <li style="filter: 100; opacity: 1;"><img src="images/1.jpg" /></li>
+            <li><img src="images/2.jpg" /></li>
+            <li><img src="images/3.jpg" /></li>
+            <li><img src="images/4.jpg" /></li>
+            <li><img src="images/5.jpg" /></li>
+            <li><img src="images/6.jpg" /></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

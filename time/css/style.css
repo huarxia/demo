@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+body, div, h1, h2, h3, h4, h5, span, a, img, input, ul, li, ol, dl, dt, dd, table, tr, td, p{ margin: 0px; padding: 0px; border: 0px; list-style: none }
+body { background:white; font-family: "寰蒋闆呴粦"; font-size: 12px; background: #f9f9f9 }
+input:focus {outline:none;}
+a:link, a:visited { text-decoration: none }
+a:hover{ text-decoration:underline}
+.lb-clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+*html .lb-clearfix{height:1%}
+#canvas{ border:1px solid #ccc;display: block;margin:50px auto 0px;}
