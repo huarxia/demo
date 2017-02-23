@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>dom0 dom2事件</title>
+</head>
+<body>
+    <a href="javascript:;" onclick="alert('onclick');" class="el">點擊一下</a>
+    <script type="text/javascript">
+        var el = document.getElementsByClassName('el');
+        el[0].onclick = function () {
+            alert('script 綁定click');
+        }
+        el[0].onclick = function () {
+            alert('script 綁定click第二次綁定拉~~');
+        }
+        el[0].addEventListener("click", function(e){  
+            alert("addEventListener第一次綁定");
+        }, false);
+        el[0].addEventListener("click", function(e){  
+            alert("addEventListener第二次綁定");
+        }, false);
+        //捕获事件
+        el[0].addEventListener("click", function(e){  
+            alert("捕獲時觸發");
+        }, true);
+
+        //冒泡事件
+        el[0].addEventListener("click", function(e){  
+            alert("冒泡時觸發");
+        }, false);
+    </script>
+</body>
+</html>
