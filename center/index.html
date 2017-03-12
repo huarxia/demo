@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>水平垂直居中</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body {
+            padding: 10px;
+        }
+        .middle {
+            padding: 10px;
+            border: 1px solid #000;
+            margin-top: 6px;
+        }
+        .middle > h5 {
+            height: 60px;
+            border: 1px solid pink;
+            line-height: 60px;
+        }
+        .middle-img {
+            border: 1px solid yellow;
+            width: 300px;
+            height: 300px;
+        }
+        .middle2 > .middle-img {
+            line-height: 300px;
+            text-align: center;
+        }
+        .middle-img > img {
+            vertical-align: middle;
+        }
+        .middle3 > .middle-img {
+            display: table;
+            text-align: center;
+        }
+        .middle3 > .middle-img > div {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="middle middle1">
+        <h5>单行文本垂直居中</h5>
+        设置: 
+        <code>
+            line-height: 60px;
+        </code>
+    </div>
+    <div class="middle middle2">
+        <h5>垂直居中一张图片</h5>
+        <div class="middle-img">
+            <img width="200px;" src="http://odflit039.bkt.clouddn.com/o_1asmmlj0610s4jp4ab1fsbmss25__OWZLcDBzU0NiU3lsTTdwcHM2WGRyQU9uanRpeklTUkZSNVp0SGVOWWV0bzk0S2FTYUxVREVnPT0.jpg">
+        </div>
+        设置: 
+        <code>
+            <pre>父级：</pre>
+            width: 300px;
+            height: 300px;
+            line-height: 300px;
+            text-align: center;
+            <pre>本身：</pre>
+            vertical-align: middle;
+        </code>
+    </div>
+    <div class="middle middle3">
+        <h5>垂直居中一张图片</h5>
+        <div class="middle-img">
+            <div>
+                <img width="200px;" src="http://odflit039.bkt.clouddn.com/o_1asmmlj0610s4jp4ab1fsbmss25__OWZLcDBzU0NiU3lsTTdwcHM2WGRyQU9uanRpeklTUkZSNVp0SGVOWWV0bzk0S2FTYUxVREVnPT0.jpg">
+            </div>
+        </div>
+        设置: 
+        <code>
+            <pre>父级：</pre>
+            width: 300px;
+            height: 300px;
+            display: table;
+            text-align: center;
+            <pre>本身：</pre>
+            display: table-cell;
+            vertical-align: middle;
+        </code>
+    </div>
+</body>
+</html>
