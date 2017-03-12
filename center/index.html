@@ -42,18 +42,87 @@
             display: table-cell;
             vertical-align: middle;
         }
+        .middle4 > .middle-img {
+            position: relative;
+        }
+        .middle4 > .middle-img > img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -100px;
+            margin-top: -66px;
+        }
+        .middle5 > .middle-img {
+            position: relative;
+        }
+        .middle5 > .middle-img > img {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        .middle6 > .middle-img {
+            text-align: center;
+            height: auto;
+            padding: 5% 0;
+        }
+        .middle6 > .middle-img > img {
+            padding: 10% 0;
+        }
+        .middle7 > .middle-img {
+            position: relative;
+        }
+        .middle7 > .middle-img > img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%,-50%);
+            -moz-transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+            -o-transform: translate(-50%,-50%);
+            transform:translate(-50%,-50%);
+        }
+        .middle8 > .middle-img {
+            display: flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .middle9 > .middle-img {
+            text-align:center;
+            font-size:0;
+        }
+        .middle9 > .middle-img > img {
+            vertical-align:middle;
+            display:inline-block;
+        }
+        .middle9 > .middle-img:after{
+            content: '';
+            width: 0;
+            height: 100%;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .middle10 > .middle-img {
+            display: flex;
+            text-align: center;
+        }
+        .middle10 > .middle-img > img {
+            margin: auto;
+        }
     </style>
 </head>
 <body>
     <div class="middle middle1">
-        <h5>单行文本垂直居中</h5>
+        <h5>1.line-height</h5>
         设置: 
         <code>
             line-height: 60px;
         </code>
     </div>
     <div class="middle middle2">
-        <h5>垂直居中一张图片</h5>
+        <h5>2.vertical-align: middle;</h5>
         <div class="middle-img">
             <img width="200px;" src="http://odflit039.bkt.clouddn.com/o_1asmmlj0610s4jp4ab1fsbmss25__OWZLcDBzU0NiU3lsTTdwcHM2WGRyQU9uanRpeklTUkZSNVp0SGVOWWV0bzk0S2FTYUxVREVnPT0.jpg">
         </div>
@@ -69,7 +138,7 @@
         </code>
     </div>
     <div class="middle middle3">
-        <h5>垂直居中一张图片</h5>
+        <h5>3.垂直居中table-cell</h5>
         <div class="middle-img">
             <div>
                 <img width="200px;" src="http://odflit039.bkt.clouddn.com/o_1asmmlj0610s4jp4ab1fsbmss25__OWZLcDBzU0NiU3lsTTdwcHM2WGRyQU9uanRpeklTUkZSNVp0SGVOWWV0bzk0S2FTYUxVREVnPT0.jpg">
@@ -85,6 +154,127 @@
             <pre>本身：</pre>
             display: table-cell;
             vertical-align: middle;
+        </code>
+    </div>
+    <div class="middle middle4">
+        <h5>4.绝对定位和负margin方法（适用：块级元素） 缺点：需要知道元素的宽高</h5>
+        <div class="middle-img">
+            <img width="200px;" src="http://odflit039.bkt.clouddn.com/o_1asmmlj0610s4jp4ab1fsbmss25__OWZLcDBzU0NiU3lsTTdwcHM2WGRyQU9uanRpeklTUkZSNVp0SGVOWWV0bzk0S2FTYUxVREVnPT0.jpg">
+        </div>
+        设置: 
+        <code>
+            <pre>父级：</pre>
+            position: relative;
+            <pre>本身：</pre>
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -100px;
+            margin-top: -66px;
+        </code>
+    </div>
+    <div class="middle middle5">
+        <h5>5.绝对定位和stretching</h5>
+        <div class="middle-img">
+            <img width="200px;" src="http://odflit039.bkt.clouddn.com/o_1asmmlj0610s4jp4ab1fsbmss25__OWZLcDBzU0NiU3lsTTdwcHM2WGRyQU9uanRpeklTUkZSNVp0SGVOWWV0bzk0S2FTYUxVREVnPT0.jpg">
+        </div>
+        设置: 
+        <code>
+            <pre>父级：</pre>
+            position: relative;
+            <pre>本身：</pre>
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        </code>
+    </div>
+    <div class="middle middle6">
+        <h5>6.equal top and bottom padding（适用：通用） css: </h5>
+        <div class="middle-img">
+            <img width="200px;" src="http://odflit039.bkt.clouddn.com/o_1asmmlj0610s4jp4ab1fsbmss25__OWZLcDBzU0NiU3lsTTdwcHM2WGRyQU9uanRpeklTUkZSNVp0SGVOWWV0bzk0S2FTYUxVREVnPT0.jpg">
+        </div>
+        设置: 
+        <code>
+            <pre>父级：</pre>
+            padding: 5% 0;
+            <pre>本身：</pre>
+            padding: 10% 0;
+        </code>
+    </div>
+    <div class="middle middle7">
+        <h5>7.css3 transform:translate()</h5>
+        <div class="middle-img">
+            <img width="200px;" src="http://odflit039.bkt.clouddn.com/o_1asmmlj0610s4jp4ab1fsbmss25__OWZLcDBzU0NiU3lsTTdwcHM2WGRyQU9uanRpeklTUkZSNVp0SGVOWWV0bzk0S2FTYUxVREVnPT0.jpg">
+        </div>
+        设置: 
+        <code>
+            <pre>父级：</pre>
+            position: relative;
+            <pre>本身：</pre>
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%,-50%);
+            -moz-transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+            -o-transform: translate(-50%,-50%);
+            transform:translate(-50%,-50%);
+        </code>
+    </div>
+    <div class="middle middle8">
+        <h5>8.display:flex</h5>
+        <div class="middle-img">
+            <img width="200px;" src="http://odflit039.bkt.clouddn.com/o_1asmmlj0610s4jp4ab1fsbmss25__OWZLcDBzU0NiU3lsTTdwcHM2WGRyQU9uanRpeklTUkZSNVp0SGVOWWV0bzk0S2FTYUxVREVnPT0.jpg">
+        </div>
+        设置: 
+        <code>
+            <pre>父级：</pre>
+            display: flex;
+            justify-content:center;
+            align-items:center;
+            <pre>本身：</pre>
+            無需設置
+        </code>
+    </div>
+    <div class="middle middle9">
+        <h5>9.display:inline-block</h5>
+        <div class="middle-img">
+            <img width="200px;" src="http://odflit039.bkt.clouddn.com/o_1asmmlj0610s4jp4ab1fsbmss25__OWZLcDBzU0NiU3lsTTdwcHM2WGRyQU9uanRpeklTUkZSNVp0SGVOWWV0bzk0S2FTYUxVREVnPT0.jpg">
+        </div>
+        设置: 
+        <code>
+            <pre>父级：</pre>
+            text-align:center;
+            font-size:0;
+            <pre>本身：</pre>
+            vertical-align:middle;
+            display:inline-block;
+            <pre>偽類：</pre>
+            content: '';
+            width: 0;
+            height: 100%;
+            display: inline-block;
+            vertical-align: middle;
+            <pre>
+                這個方法特別技巧，相當於創建一個偽元素100%高撐開父級，然後時同級元素居中對齊即可
+            </pre>
+        </code>
+    </div>
+    <div class="middle middle10">
+        <h5>10.display:flex和margin:auto</h5>
+        <div class="middle-img">
+            <img width="200px;" src="http://odflit039.bkt.clouddn.com/o_1asmmlj0610s4jp4ab1fsbmss25__OWZLcDBzU0NiU3lsTTdwcHM2WGRyQU9uanRpeklTUkZSNVp0SGVOWWV0bzk0S2FTYUxVREVnPT0.jpg">
+        </div>
+        设置: 
+        <code>
+            <pre>父级：</pre>
+            display: flex;
+            text-align: center;
+            <pre>本身：</pre>
+            margin: auto;
         </code>
     </div>
 </body>
