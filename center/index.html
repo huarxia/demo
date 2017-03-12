@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
 <head>
     <meta charset="utf-8">
     <title>水平垂直居中</title>
@@ -12,6 +13,17 @@
         body {
             padding: 10px;
         }
+        code {
+            display: block;
+            color: #a6e22e;
+            background: #23241f;
+            padding: 8px;
+        }
+        code > pre,
+        code > p {
+            font-size: 12px;
+            color: #f8f8f2;
+        }
         .middle {
             padding: 10px;
             border: 1px solid #000;
@@ -21,10 +33,11 @@
             height: 60px;
             border: 1px solid pink;
             line-height: 60px;
+            padding-left: 8px;
         }
         .middle-img {
             border: 1px solid yellow;
-            width: 300px;
+            /*width: 300px;*/
             height: 300px;
         }
         .middle2 > .middle-img {
@@ -128,12 +141,12 @@
         </div>
         设置: 
         <code>
-            <pre>父级：</pre>
-            width: 300px;
-            height: 300px;
-            line-height: 300px;
+            <pre>// 父级：</pre>
+            width: 300px;</br>
+            height: 300px;</br>
+            line-height: 300px;</br>
             text-align: center;
-            <pre>本身：</pre>
+            <pre>// 本身：</pre>
             vertical-align: middle;
         </code>
     </div>
@@ -146,13 +159,13 @@
         </div>
         设置: 
         <code>
-            <pre>父级：</pre>
-            width: 300px;
-            height: 300px;
-            display: table;
+            <pre>// 父级：</pre>
+            width: 300px;</br>
+            height: 300px;</br>
+            display: table;</br>
             text-align: center;
-            <pre>本身：</pre>
-            display: table-cell;
+            <pre>// 本身：</pre>
+            display: table-cell;</br>
             vertical-align: middle;
         </code>
     </div>
@@ -163,13 +176,13 @@
         </div>
         设置: 
         <code>
-            <pre>父级：</pre>
+            <pre>// 父级：</pre>
             position: relative;
-            <pre>本身：</pre>
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            margin-left: -100px;
+            <pre>// 本身：</pre>
+            position: absolute;</br>
+            top: 50%;</br>
+            left: 50%;</br>
+            margin-left: -100px;</br>
             margin-top: -66px;
         </code>
     </div>
@@ -180,14 +193,14 @@
         </div>
         设置: 
         <code>
-            <pre>父级：</pre>
+            <pre>// 父级：</pre>
             position: relative;
-            <pre>本身：</pre>
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
+            <pre>// 本身：</pre>
+            position: absolute;</br>
+            top: 0;</br>
+            bottom: 0;</br>
+            left: 0;</br>
+            right: 0;</br>
             margin: auto;
         </code>
     </div>
@@ -198,9 +211,9 @@
         </div>
         设置: 
         <code>
-            <pre>父级：</pre>
+            <pre>// 父级：</pre>
             padding: 5% 0;
-            <pre>本身：</pre>
+            <pre>// 本身：</pre>
             padding: 10% 0;
         </code>
     </div>
@@ -211,16 +224,16 @@
         </div>
         设置: 
         <code>
-            <pre>父级：</pre>
+            <pre>// 父级：</pre>
             position: relative;
-            <pre>本身：</pre>
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -webkit-transform: translate(-50%,-50%);
-            -moz-transform: translate(-50%,-50%);
-            -ms-transform: translate(-50%,-50%);
-            -o-transform: translate(-50%,-50%);
+            <pre>// 本身：</pre>
+            position: absolute;</br>
+            top: 50%;</br>
+            left: 50%;</br>
+            -webkit-transform: translate(-50%,-50%);</br>
+            -moz-transform: translate(-50%,-50%);</br>
+            -ms-transform: translate(-50%,-50%);</br>
+            -o-transform: translate(-50%,-50%);</br>
             transform:translate(-50%,-50%);
         </code>
     </div>
@@ -231,12 +244,12 @@
         </div>
         设置: 
         <code>
-            <pre>父级：</pre>
-            display: flex;
-            justify-content:center;
-            align-items:center;
-            <pre>本身：</pre>
-            無需設置
+            <pre>// 父级：</pre>
+            display: flex;</br>
+            justify-content: center;</br>
+            align-items: center;
+            <pre>// 本身：</pre>
+            // 無需設置
         </code>
     </div>
     <div class="middle middle9">
@@ -246,21 +259,21 @@
         </div>
         设置: 
         <code>
-            <pre>父级：</pre>
-            text-align:center;
-            font-size:0;
-            <pre>本身：</pre>
-            vertical-align:middle;
-            display:inline-block;
-            <pre>偽類：</pre>
-            content: '';
-            width: 0;
-            height: 100%;
+            <pre>// 父级：</pre>
+            text-align: center;
+            font-size: 0;
+            <pre>// 本身：</pre>
+            vertical-align: middle;</br>
             display: inline-block;
+            <pre>// 偽類：</pre>
+            content: '';</br>
+            width: 0;</br>
+            height: 100%;</br>
+            display: inline-block;</br>
             vertical-align: middle;
-            <pre>
-                這個方法特別技巧，相當於創建一個偽元素100%高撐開父級，然後時同級元素居中對齊即可
-            </pre>
+            <p>
+                // 這個方法特別技巧，相當於創建一個偽元素100%高撐開父級，然後時同級元素居中對齊即可
+            </p>
         </code>
     </div>
     <div class="middle middle10">
@@ -270,10 +283,10 @@
         </div>
         设置: 
         <code>
-            <pre>父级：</pre>
-            display: flex;
+            <pre>// 父级：</pre>
+            display: flex;</br>
             text-align: center;
-            <pre>本身：</pre>
+            <pre>// 本身：</pre>
             margin: auto;
         </code>
     </div>
